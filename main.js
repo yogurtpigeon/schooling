@@ -3,7 +3,9 @@
 const Discord = require('discord.js');
 const fs = require ('fs');
 
-
+if (process.argv.length < 3) {
+    console.log("please input an api key!");
+}
 
 const client = new Discord.Client();
 
@@ -83,5 +85,6 @@ client.on('message', message =>{
     message.channel.send('sucks');
 
 
-
 });
+// log in with command line args
+client.login(process.argv[2]);
