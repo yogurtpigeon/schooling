@@ -80,7 +80,7 @@ client.on('message', message =>{
             
        
     } else if(command === 'beep') {
-        messsage.channel.send('boop. This bot is version 1.0.0');
+        message.channel.send('boop. This bot is version 1.0.0');
     }
 
     if (command === 'connor')
