@@ -100,7 +100,7 @@ client.on('message', message =>{
 
                 var d = new Date();
                 var dayOfMonth = d.getDate();
-                var dayLetter = even_odd_str[dayOfMonth - 2];
+                var dayLetter = even_odd_str[dayOfMonth];
                 if (dayLetter == "E") {
                     message.channel.send ('Tomorrow is an even day');
                 }
