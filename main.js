@@ -77,7 +77,7 @@ client.on('message', message =>{
                     message.channel.send ('There\'s no school today.');
                 }
             }
-         }   else if (command == 'tomorrow'){
+         } else if (command == 'tomorrow'){
             var d = new Date();
             var month = new Array();
             month[0] = "January";
@@ -98,9 +98,11 @@ client.on('message', message =>{
             if (month_json.hasOwnProperty(n)) {
                 let even_odd_str = month_json[n];
 
-                var d = new Date();
-                var dayOfMonth = d.getDate();
-                var dayLetter = even_odd_str[dayOfMonth];
+                var today = new Date();
+		var tomorrow = new Date(today);
+		tommorow.setDate(tommorow.getDate() + 1);
+                var dayOfMonth = tomorrow.getDate();
+                var dayLetter = even_odd_str[dayOfMonth - 1];
                 if (dayLetter == "E") {
                     message.channel.send ('Tomorrow is an even day');
                 }
@@ -108,8 +110,9 @@ client.on('message', message =>{
                     message.channel.send ('Tomorrow is an odd day');
                 }
                 if (dayLetter == "N") {
-                    message.channel.send ('There\'s no school tomorrow.');}   
-       
+                    message.channel.send ('There\'s no school tomorrow.');
+		}
+	    }
     } else if(command === 'beep') {
         message.channel.send('boop. This bot is version 1.0.0');
     }
