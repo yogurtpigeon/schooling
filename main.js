@@ -100,7 +100,7 @@ client.on('message', message =>{
 
                 var today = new Date();
 		var tomorrow = new Date(today);
-		tommorow.setDate(tommorow.getDate() + 1);
+		tomorrow.setDate(tomorrow.getDate() + 1);
                 var dayOfMonth = tomorrow.getDate();
                 var dayLetter = even_odd_str[dayOfMonth - 1];
                 if (dayLetter == "E") {
