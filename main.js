@@ -117,7 +117,7 @@ client.on('message', message =>{
         message.channel.send('boop. This bot is version 1.0.0');
     }
 
-    if (command === 'connor')
+    if (command === 'maury')
     message.channel.send('sucks');
 
 
